@@ -1,0 +1,55 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/27.0.9 Chrome/134.0.6998.205 Electron/35.4.0 Safari/537.36">
+  <diagram name="Страница — 1" id="W0nInr_fjdJ8zhqRL875">
+    <mxGraphModel dx="1086" dy="700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="OL2FH9qaq_7ir6K2WIig-12" edge="1" parent="1" source="OL2FH9qaq_7ir6K2WIig-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="OL2FH9qaq_7ir6K2WIig-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="OL2FH9qaq_7ir6K2WIig-1" parent="1" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.start_1;whiteSpace=wrap;" value="Начало" vertex="1">
+          <mxGeometry height="60" width="100" x="364" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="OL2FH9qaq_7ir6K2WIig-2" parent="1" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.start_1;whiteSpace=wrap;" value="Конец" vertex="1">
+          <mxGeometry height="60" width="100" x="364" y="640" as="geometry" />
+        </mxCell>
+        <mxCell id="OL2FH9qaq_7ir6K2WIig-13" edge="1" parent="1" source="OL2FH9qaq_7ir6K2WIig-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="OL2FH9qaq_7ir6K2WIig-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="OL2FH9qaq_7ir6K2WIig-5" parent="1" style="verticalLabelPosition=middle;verticalAlign=middle;html=1;shape=process;whiteSpace=wrap;rounded=1;size=0.14;arcSize=6;labelPosition=center;align=center;" value="Анализ предметной области" vertex="1">
+          <mxGeometry height="60" width="180" x="324" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="OL2FH9qaq_7ir6K2WIig-14" edge="1" parent="1" source="OL2FH9qaq_7ir6K2WIig-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="OL2FH9qaq_7ir6K2WIig-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="OL2FH9qaq_7ir6K2WIig-6" parent="1" style="verticalLabelPosition=middle;verticalAlign=middle;html=1;shape=process;whiteSpace=wrap;rounded=1;size=0.14;arcSize=6;labelPosition=center;align=center;" value="Создание базы данных" vertex="1">
+          <mxGeometry height="60" width="180" x="324" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="OL2FH9qaq_7ir6K2WIig-15" edge="1" parent="1" source="OL2FH9qaq_7ir6K2WIig-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="OL2FH9qaq_7ir6K2WIig-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="OL2FH9qaq_7ir6K2WIig-7" parent="1" style="verticalLabelPosition=middle;verticalAlign=middle;html=1;shape=process;whiteSpace=wrap;rounded=1;size=0.14;arcSize=6;labelPosition=center;align=center;" value="Добавление базы данных в приложение" vertex="1">
+          <mxGeometry height="60" width="180" x="324" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="OL2FH9qaq_7ir6K2WIig-16" edge="1" parent="1" source="OL2FH9qaq_7ir6K2WIig-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="OL2FH9qaq_7ir6K2WIig-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="OL2FH9qaq_7ir6K2WIig-8" parent="1" style="verticalLabelPosition=middle;verticalAlign=middle;html=1;shape=process;whiteSpace=wrap;rounded=1;size=0.14;arcSize=6;labelPosition=center;align=center;" value="Создание страниц приложения" vertex="1">
+          <mxGeometry height="60" width="180" x="324" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="OL2FH9qaq_7ir6K2WIig-17" edge="1" parent="1" source="OL2FH9qaq_7ir6K2WIig-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="OL2FH9qaq_7ir6K2WIig-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="OL2FH9qaq_7ir6K2WIig-9" parent="1" style="verticalLabelPosition=middle;verticalAlign=middle;html=1;shape=process;whiteSpace=wrap;rounded=1;size=0.14;arcSize=6;labelPosition=center;align=center;" value="Добаление стилей" vertex="1">
+          <mxGeometry height="60" width="180" x="324" y="480" as="geometry" />
+        </mxCell>
+        <mxCell id="OL2FH9qaq_7ir6K2WIig-11" parent="1" style="verticalLabelPosition=middle;verticalAlign=middle;html=1;shape=process;whiteSpace=wrap;rounded=1;size=0.14;arcSize=6;labelPosition=center;align=center;" value="Добавление логики страниц приложения" vertex="1">
+          <mxGeometry height="60" width="180" x="324" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="OL2FH9qaq_7ir6K2WIig-18" edge="1" parent="1" source="OL2FH9qaq_7ir6K2WIig-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" target="OL2FH9qaq_7ir6K2WIig-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

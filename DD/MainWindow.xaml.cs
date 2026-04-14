@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -23,6 +24,26 @@ namespace DD
         public MainWindow()
         {
             InitializeComponent();
+        }
+        private void Back_Click(object sender, RoutedEventArgs e)
+        {
+            if (MainFrame.CanGoBack)
+                MainFrame.GoBack();
+        }
+
+        private void Out_Click(object sender, RoutedEventArgs e)
+        {
+            Core.AppUser = null;
+            MainFrame.Navigate(new Pages.AuthPage());
+        }
+
+        private void MainFrame_Navigated(object sender, System.Windows.Navigation.NavigationEventArgs e)
+        {
+
+            if (Core.AppUser != null && FIOTxtBx.Text != Core.AppUser.FullName)
+                FIOTxtBx.Text = Core.AppUser.FullName;
+            else
+                FIOTxtBx.Text = string.Empty;
         }
     }
 }

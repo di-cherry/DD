@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b8743294eaae461099cf2a08b3aa0a1e" Name="Diagram1">
+        <EntityTypeShape EntityType="PharmacyDBModel.Categories" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PharmacyDBModel.OrderItems" Width="1.5" PointX="7.5" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PharmacyDBModel.Orders" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="PharmacyDBModel.Products" Width="1.5" PointX="5.25" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PharmacyDBModel.Roles" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PharmacyDBModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PharmacyDBModel.Users" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="PharmacyDBModel.FK__Products__Catego__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="PharmacyDBModel.FK__OrderItem__Order__44FF419A" ManuallyRouted="false" />
+        <AssociationConnector Association="PharmacyDBModel.FK__OrderItem__Produ__45F365D3" ManuallyRouted="false" />
+        <AssociationConnector Association="PharmacyDBModel.FK__Orders__UserId__4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="PharmacyDBModel.FK__Users__RoleId__398D8EEE" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
