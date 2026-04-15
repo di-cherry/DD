@@ -29,29 +29,40 @@ namespace DD.Pages
         public EditAddProductPage(Products product)
         {
             InitializeComponent();
-            DataContext = this;
 
             Categories = Core.Context.Categories.ToList();
 
-            if (product == null)
+            if (product != null)
+            {
+                ChoiceProduct = product;
+                isNew = false;
+            }
+            else
             {
                 ChoiceProduct = new Products();
                 isNew = true;
             }
-            else
-            {
-                ChoiceProduct = product;
-            }
+            DataContext = ChoiceProduct;
         }
 
         private void Save_Click(object sender, RoutedEventArgs e)
         {
-            if (!Check()) return;
+            if (string.IsNullOrWhiteSpace(ChoiceProduct.Name)
+                || ChoiceProduct.Price < 0)
+            {
+                MessageBox.Show("Заполните корректно данные");
+                return;
+            }
 
             if (isNew)
+            {
                 Core.Context.Products.Add(ChoiceProduct);
+            }
 
             Core.Context.SaveChanges();
+
+            MessageBox.Show("Сохранено");
+
             NavigationService.GoBack();
         }
 

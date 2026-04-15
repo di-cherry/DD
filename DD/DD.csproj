@@ -102,6 +102,7 @@
     <Compile Include="Pages\ProductPage.xaml.cs">
       <DependentUpon>ProductPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ProductPartial.cs" />
     <Compile Include="Products.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>

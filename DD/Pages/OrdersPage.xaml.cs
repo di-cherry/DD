@@ -29,7 +29,9 @@ namespace DD.Pages
 
         void LoadData()
         {
-            OrdersListView.ItemsSource = Core.Context.Orders.ToList();
+            OrdersListView.ItemsSource = Core.Context.Orders
+                .Include("Users") 
+                .ToList();
         }
 
         void CheckRole()
@@ -37,6 +39,10 @@ namespace DD.Pages
             if (Core.AppUser == null || Core.AppUser.RoleId != 1)
             {
                 AdminPanel.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                AdminPanel.Visibility = Visibility.Visible;
             }
         }
 
@@ -46,22 +52,29 @@ namespace DD.Pages
 
             if (order == null)
             {
-                MessageBox.Show("Выберите заказ");
+                MessageBox.Show("Выберите заказ",
+                    "Ошибка",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning);
                 return;
             }
 
-            if (MessageBox.Show("Удалить заказ?", "Внимание",
-                MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+            var result = MessageBox.Show("Удалить заказ?",
+                "Подтверждение",
+                MessageBoxButton.YesNo,
+                MessageBoxImage.Warning);
+
+            if (result == MessageBoxResult.Yes)
             {
                 Core.Context.Orders.Remove(order);
                 Core.Context.SaveChanges();
                 LoadData();
             }
         }
-
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             LoadData();
+            CheckRole();
         }
     }
 }

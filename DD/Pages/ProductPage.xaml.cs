@@ -34,7 +34,9 @@ namespace DD.Pages
 
         void LoadData()
         {
-            _products = Core.Context.Products.ToList();
+            _products = Core.Context.Products
+            .Include("Categories")
+            .ToList();
             ProductListBox.ItemsSource = _products;
 
             var categories = Core.Context.Categories.Select(c => c.Name).ToList();
@@ -48,9 +50,47 @@ namespace DD.Pages
 
         void ApplyRole()
         {
-            if (Core.AppUser == null || Core.AppUser.RoleId != 1)
+            var role = Core.AppUser?.RoleId;
+
+            bool isAdmin = role == 1;
+            bool isManager = role == 2;
+            bool isClient = role == 3;
+            bool isGuest = role == null;
+
+            if (isGuest)
             {
+                CartBtn.Visibility = Visibility.Collapsed;
+                OrdersBtn.Visibility = Visibility.Collapsed;
+
                 AdminStPanl.Visibility = Visibility.Collapsed;
+            }
+
+            else if (isClient)
+            {
+                CartBtn.Visibility = Visibility.Visible;
+                OrdersBtn.Visibility = Visibility.Collapsed;
+
+                AdminStPanl.Visibility = Visibility.Collapsed;
+            }
+
+            else if (isManager)
+            {
+                CartBtn.Visibility = Visibility.Visible;
+                OrdersBtn.Visibility = Visibility.Visible;
+
+                AdminStPanl.Visibility = Visibility.Visible;
+
+                DeleteBtn.Visibility = Visibility.Collapsed;
+            }
+
+            else if (isAdmin)
+            {
+                CartBtn.Visibility = Visibility.Visible;
+                OrdersBtn.Visibility = Visibility.Visible;
+
+                AdminStPanl.Visibility = Visibility.Visible;
+
+                DeleteBtn.Visibility = Visibility.Visible;
             }
         }
 
@@ -112,6 +152,21 @@ namespace DD.Pages
             }
 
             NavigationService.Navigate(new EditAddProductPage(product));
+        }
+        private void Cart_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new CartPage());
+        }
+        private void Orders_Click(object sender, RoutedEventArgs e)
+        {
+            if (Core.AppUser == null ||
+                (Core.AppUser.RoleId != 1 && Core.AppUser.RoleId != 2))
+            {
+                MessageBox.Show("Нет доступа к заказам");
+                return;
+            }
+
+            NavigationService.Navigate(new OrdersPage());
         }
 
         private void DelProduct_Click(object sender, RoutedEventArgs e)

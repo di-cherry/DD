@@ -21,27 +21,43 @@
                 <ColumnDefinition Width="3*"/>
                 <ColumnDefinition Width="2*"/>
                 <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
 
             <TextBox x:Name="SearchTxtBx"
-                     Margin="5"
-                     TextChanged="Update"/>
+             Margin="5"
+             TextChanged="Update"/>
 
             <ComboBox x:Name="SortCmbBx"
-                      Grid.Column="1"
-                      Margin="5"
-                      SelectedIndex="0"
-                      SelectionChanged="Update">
+              Grid.Column="1"
+              Margin="5"
+              SelectedIndex="0"
+              SelectionChanged="Update">
                 <ComboBoxItem Content="Без сортировки"/>
                 <ComboBoxItem Content="Цена ↑"/>
                 <ComboBoxItem Content="Цена ↓"/>
             </ComboBox>
 
             <ComboBox x:Name="FiltrCmbBx"
-                      Grid.Column="2"
-                      Margin="5"
-                      SelectionChanged="Update"/>
+              Grid.Column="2"
+              Margin="5"
+              SelectionChanged="Update"/>
+
+            <StackPanel Orientation="Horizontal"
+                Grid.Column="3"
+                VerticalAlignment="Center">
+
+                <Button Content="Корзина" x:Name="CartBtn"
+                Click="Cart_Click"
+                Margin="5"/>
+
+                <Button Content="Заказы" x:Name="OrdersBtn"
+                Click="Orders_Click"
+                Margin="5"/>
+
+            </StackPanel>
         </Grid>
+
 
         <ListBox x:Name="ProductListBox"
                  Grid.Row="1"
@@ -56,12 +72,23 @@
                                 <ColumnDefinition Width="Auto"/>
                             </Grid.ColumnDefinitions>
 
+                            <Image Height="120" Width="120" Margin="5">
+                                <Image.Source>
+                                    <Binding Path="ImagePath">
+                                        <Binding.TargetNullValue>
+                                            <BitmapImage UriSource="\Resourse\images.jpg"/>
+                                        </Binding.TargetNullValue>
+                                    </Binding>
+                                </Image.Source>
+                            </Image>
+
+
                             <StackPanel>
 
                                 <TextBlock FontWeight="Bold"
                                            Text="{Binding Name}"/>
 
-                                <TextBlock Text="{Binding Category.Name}"/>
+                                <TextBlock Text="{Binding Categories.Name}"/>
 
                                 <TextBlock Text="{Binding Description}"/>
 
@@ -114,7 +141,7 @@
                     Margin="5"
                     Click="RedProduct_Click"/>
 
-            <Button Content="Удалить"
+            <Button Content="Удалить" x:Name="DeleteBtn"
                     Margin="5"
                     Click="DelProduct_Click"/>
 

@@ -10,32 +10,59 @@
       Loaded="Page_Loaded">
 
     <Grid Margin="10">
-
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <ListView x:Name="OrdersListView">
+        <ListView x:Name="OrdersListView" HorizontalContentAlignment="Stretch">
+            <ListView.ItemTemplate>
+                <DataTemplate>
 
-            <ListView.View>
-                <GridView>
+                    <Border BorderBrush="Black"
+                    BorderThickness="1"
+                    Margin="5"
+                    Padding="10">
 
-                    <GridViewColumn Header="ID"
-                                    DisplayMemberBinding="{Binding Id}"/>
+                        <Grid>
 
-                    <GridViewColumn Header="Дата"
-                                    DisplayMemberBinding="{Binding Date}"/>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="150"/>
+                            </Grid.ColumnDefinitions>
 
-                    <GridViewColumn Header="Адрес"
-                                    DisplayMemberBinding="{Binding Address}"/>
+                            <StackPanel>
 
-                    <GridViewColumn Header="Пользователь"
-                                    DisplayMemberBinding="{Binding User.FullName}"/>
+                                <TextBlock Text="{Binding Id, StringFormat=Заказ №{0}}"
+                                   FontWeight="Bold"/>
 
-                </GridView>
-            </ListView.View>
+                                <TextBlock Text="{Binding Users.FullName, StringFormat=Пользователь: {0}}"/>
 
+                                <TextBlock Text="{Binding Date, StringFormat=Дата: {0:dd.MM.yyyy}}"/>
+
+                                <TextBlock Text="{Binding Adress, StringFormat=Адрес: {0}}"/>
+
+                            </StackPanel>
+
+                            <Border Grid.Column="1"
+                            BorderBrush="Black"
+                            BorderThickness="1"
+                            Padding="5"
+                            Margin="5">
+
+                                <StackPanel>
+                                    <TextBlock Text="Заказ"/>
+                                    <TextBlock Text="{Binding Date, StringFormat={}{0:HH:mm}}"
+                                       HorizontalAlignment="Center"/>
+                                </StackPanel>
+
+                            </Border>
+
+                        </Grid>
+                    </Border>
+
+                </DataTemplate>
+            </ListView.ItemTemplate>
         </ListView>
 
         <StackPanel Grid.Row="1"
