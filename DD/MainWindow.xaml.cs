@@ -37,9 +37,8 @@ namespace DD
             MainFrame.Navigate(new Pages.AuthPage());
         }
 
-        private void MainFrame_Navigated(object sender, System.Windows.Navigation.NavigationEventArgs e)
+        private void MainFrame_Navigated(object sender, NavigationEventArgs e)
         {
-
             if (Core.AppUser != null && FIOTxtBx.Text != Core.AppUser.FullName)
                 FIOTxtBx.Text = Core.AppUser.FullName;
             else

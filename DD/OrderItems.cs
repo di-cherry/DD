@@ -15,9 +15,9 @@ namespace DD
     public partial class OrderItems
     {
         public int Id { get; set; }
-        public Nullable<int> OrderId { get; set; }
-        public Nullable<int> ProductId { get; set; }
-        public Nullable<int> Quantity { get; set; }
+        public int OrderId { get; set; }
+        public int ProductId { get; set; }
+        public int Quantity { get; set; }
     
         public virtual Orders Orders { get; set; }
         public virtual Products Products { get; set; }

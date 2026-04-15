@@ -23,7 +23,7 @@ namespace DD
         public string Login { get; set; }
         public string Password { get; set; }
         public string FullName { get; set; }
-        public Nullable<int> RoleId { get; set; }
+        public int RoleId { get; set; }
     
         public virtual ICollection<Orders> Orders { get; set; }
         public virtual Roles Roles { get; set; }

@@ -21,12 +21,12 @@ namespace DD
     
         public int Id { get; set; }
         public string Name { get; set; }
-        public Nullable<int> CategoryId { get; set; }
+        public decimal Price { get; set; }
+        public int Quantity { get; set; }
+        public int CategoryId { get; set; }
         public string Description { get; set; }
-        public Nullable<decimal> Price { get; set; }
-        public Nullable<int> Quantity { get; set; }
-        public Nullable<int> Discount { get; set; }
         public string ImagePath { get; set; }
+        public int Discount { get; set; }
     
         public virtual Categories Categories { get; set; }
         public virtual ICollection<OrderItems> OrderItems { get; set; }
